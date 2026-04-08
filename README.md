@@ -7,10 +7,11 @@ Projeto de **Inteligência Artificial**: aplicação do algoritmo **K-Means** so
 | Arquivo | Descrição |
 |---------|-----------|
 | `kmeans_avocado.py` | Script principal (carrega dados, normaliza, treina K-Means, avalia e gera figura) |
+| `knn_avocado.py` | Script de **classificação com k-NN** e comparação com K-Means no mesmo dataset |
 | `Avocado.csv` | Dataset com atributos numéricos e coluna `classe` (variedades) |
 | `README.md` | Este arquivo |
 
-Ao executar o script, é gerado o arquivo **`resultado_kmeans.png`** (não versionar se preferir manter só o código e o CSV; ou versionar como artefato da execução).
+Ao executar os scripts, são gerados **`resultado_kmeans.png`** (K-Means) e **`resultado_knn.png`** (k-NN). Você pode versionar só o código e o CSV, ou incluir as imagens como artefatos da execução.
 
 ## Requisitos
 
@@ -70,13 +71,25 @@ Na pasta onde estão `kmeans_avocado.py` e `Avocado.csv`:
 py kmeans_avocado.py
 ```
 
+Para rodar a **classificação com k-NN** e a comparação com K-Means:
+
+```powershell
+py knn_avocado.py
+```
+
 **Linux / macOS:**
 
 ```bash
 python kmeans_avocado.py
 ```
 
-O script imprime estatísticas no terminal, abre a janela do gráfico (se o ambiente tiver interface gráfica) e salva **`resultado_kmeans.png`** na mesma pasta.
+Para rodar a **classificação com k-NN** e a comparação com K-Means:
+
+```bash
+python knn_avocado.py
+```
+
+O `kmeans_avocado.py` imprime estatísticas no terminal, abre a janela do gráfico (se o ambiente tiver interface gráfica) e salva **`resultado_kmeans.png`**. O `knn_avocado.py` salva **`resultado_knn.png`** (e tenta abrir a janela, exceto em backend não interativo).
 
 ### 5. Subir para o GitHub
 

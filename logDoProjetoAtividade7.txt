@@ -1,0 +1,65 @@
+PS C:\Users\carlim\Documents\EngenhariaDeSoftware\Inteligencia Artificial\atividade6> & "$env:LOCALAPPDATA\Programs\Python\Python311\python.exe" knn_avocado.py
+=================================================================
+  k-NN (Classificação) — Dataset Avocado | Comparação com K-Means
+=================================================================
+
+[1] Dataset carregado
+    Linhas: 150 | Colunas: 5
+
+    Distribuição de classes:
+hass      50
+fuerte    50
+bacon     50
+
+[2] Split treino/teste
+    Treino: 112 amostras | Teste: 38 amostras
+
+[3] Seleção de k (k-NN) com validação cruzada (StratifiedKFold, 5 folds)
+    k=1  -> acc média=0.9285
+    k=3  -> acc média=0.9553
+    k=5  -> acc média=0.9731
+    k=7  -> acc média=0.9731
+    k=9  -> acc média=0.9822
+    k=11 -> acc média=0.9822
+    k=13 -> acc média=0.9822
+    k=15 -> acc média=0.9822
+
+    Melhor k pela CV: k=9 (acc média=0.9822)
+
+[4] Treinando k-NN final e avaliando no conjunto de teste
+    Acurácia (k-NN): 0.9474
+
+    Matriz de confusão (k-NN):
+[[12  0  0]
+ [ 0 13  0]
+ [ 1  1 11]]
+
+    Relatório de classificação (k-NN):
+              precision    recall  f1-score   support
+
+       bacon     0.9231    1.0000    0.9600        12
+      fuerte     0.9286    1.0000    0.9630        13
+        hass     1.0000    0.8462    0.9167        13
+
+    accuracy                         0.9474        38
+   macro avg     0.9505    0.9487    0.9465        38
+weighted avg     0.9513    0.9474    0.9462        38
+
+
+[5] Comparação com K-Means (não supervisionado)
+    ARI (K-Means vs classe): 0.8632
+    Silhouette (K-Means):   0.3698
+
+    'Classificação' derivada do K-Means (voto majoritário por cluster):
+    Mapeamento cluster->classe: {0: 'fuerte', 1: 'bacon', 2: 'hass'}
+    Acurácia equivalente (K-Means): 0.9211
+
+    Matriz de confusão (K-Means -> classe):
+[[12  0  0]
+ [ 0 12  1]
+ [ 1  1 11]]
+
+=================================================================
+Concluído.
+=================================================================
+PS C:\Users\carlim\Documents\EngenhariaDeSoftware\Inteligencia Artificial\atividade6> 

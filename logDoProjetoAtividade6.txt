@@ -1,0 +1,55 @@
+=======================================================
+  K-MEANS - DATASET AVOCADO
+=======================================================
+
+[1] Dataset carregado com sucesso!
+    Linhas: 150 | Colunas: 5
+
+    Primeiras 5 linhas:
+      peso  diâmetro  espessura_casca  teor_gordura classe
+258.778580 10.085495         0.267200     21.701670   hass
+244.317837 10.414966         0.309897     19.434600   hass
+246.046968 10.466657         0.265944     19.756860   hass
+263.090457 10.143740         0.276920     17.183936   hass
+198.313064 10.146214         0.344957     17.649875   hass
+
+    Classes presentes no dataset:
+classe
+hass      50
+fuerte    50
+bacon     50
+
+[2] Dados normalizados com StandardScaler
+    Atributos usados: ['peso', 'diâmetro', 'espessura_casca', 'teor_gordura']
+
+[3] Calculando metodo do cotovelo (k=1 ate k=7)...
+    k=1 -> inercia=600.00
+    k=2 -> inercia=276.43
+    k=3 -> inercia=187.06
+    k=4 -> inercia=163.14
+    k=5 -> inercia=147.25
+    k=6 -> inercia=134.98
+    k=7 -> inercia=124.82
+
+[4] Rodando K-Means com k=3...
+    Convergiu em 4 iteracoes
+    Inercia final: 187.0557
+
+[5] Metricas de avaliacao:
+    Adjusted Rand Index (ARI): 0.8632  (1.0 = perfeito)
+    Silhouette Score:          0.3698  (1.0 = clusters perfeitos)
+
+    Composicao dos clusters:
+    Cluster 0 (~fuerte): {'fuerte': np.int64(47), 'hass': np.int64(1)}
+    Cluster 1 (~bacon ): {'bacon': np.int64(48), 'hass': np.int64(1)}
+    Cluster 1 (~bacon ): {'bacon': np.int64(48), 'hass': np.int64(1)}
+    Cluster 2 (~hass  ): {'hass': np.int64(48), 'fuerte': np.int64(3), 'bacon': np.int64(2)}
+
+    Centroides finais (escala original):
+    Cluster    Peso(g)      Diametro     Casca      Gordura%
+    -------------------------------------------------------
+    C0 ~fuerte  300.11       11.028       0.4059     20.06%
+    C1 ~bacon   215.05       9.030        0.1981     14.82%
+    C2 ~hass    255.53       9.951        0.3020     18.32%
+
+[6] Gerando graficos...
